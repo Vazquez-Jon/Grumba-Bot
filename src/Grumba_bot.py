@@ -17,7 +17,7 @@ class Grumba:
         # List of names of files
         this.media = this.getMedia()
         # List copy pastas
-        this.pastas = this.getPastas()
+        this.pastas = this.getPastas() #test
 
     # TODO Store access tokens in a file and check if they're in there instead of getting new ones every run
     def getAuth(this):
