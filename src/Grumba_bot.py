@@ -2,6 +2,7 @@
 
 import tweepy
 from Person import Person
+from random import randrange
 
 class Grumba:
     # {string} username 
@@ -16,8 +17,8 @@ class Grumba:
         this.people = this.getPeople()
         # List of names of files
         this.media = this.getMedia()
-        # List copy pastas
-        this.pastas = this.getPastas() #test
+        # List of copy pastas
+        this.pastas = this.getPastas()
 
     # TODO Store access tokens in a file and check if they're in there instead of getting new ones every run
     def getAuth(this):
@@ -59,7 +60,7 @@ class Grumba:
         return media
 
     # Get the strings of all the copypastas
-    def getPastas():
+    def getPastas(this):
         pastas = []
         infile = open("../data/copy_pastas.txt")
         for aline in infile:
@@ -68,4 +69,12 @@ class Grumba:
 
         infile.close()
         return pastas
+
+    def run(this):
+        # Go through every person and respond to them if need be
+        for person in this.people:
+            # Get a random picture and copy pasta
+            random_media_index = randrange(len(this.media))
+            random_pasta_index = randrange(len(this.pastas))
+            person.post(this.media[random_media_index], this.pastas[random_pasta_index])
         

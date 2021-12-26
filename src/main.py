@@ -31,7 +31,7 @@ bot = Grumba("GrumbaBot")
 
 while(True):
         sleep_min(5)
-        bot.respondAll()
+        bot.respond()
   
 
 
