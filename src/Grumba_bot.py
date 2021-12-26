@@ -70,7 +70,7 @@ class Grumba:
         infile.close()
         return pastas
 
-    def run(this):
+    def respond(this):
         # Go through every person and respond to them if need be
         for person in this.people:
             # Get a random picture and copy pasta
