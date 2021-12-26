@@ -3,7 +3,7 @@
 class Person:
     def __init__(this, bot, username) -> None:
         this.bot = bot
-        this.user = bot.getUser(username)
+        this.user = bot.get_user(screen_name=username)
         tweets = bot.user_timeline(user_id=this.user.id, count=10, exclude_replies=True, include_rts=False, tweet_mode="extended")
         this.newest_status = tweets[0]
 

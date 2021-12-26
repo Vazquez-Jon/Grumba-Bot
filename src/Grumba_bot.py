@@ -39,7 +39,7 @@ class Grumba:
     def getPeople(this):
         users = []
 
-        infile = open("../data/users.txt")
+        infile = open("./data/users.txt")
         for aline in infile:
             line_stripped = aline.strip()
             a_user = Person(this.api, line_stripped)
@@ -51,7 +51,7 @@ class Grumba:
     # Get the filenames of the pictures
     def getMedia(this):
         media = []
-        infile = open( "../data/media.txt" )
+        infile = open( "./data/media.txt" )
         for aline in infile:
             file_name = aline.strip()
             media.append( file_name )
@@ -62,7 +62,7 @@ class Grumba:
     # Get the strings of all the copypastas
     def getPastas(this):
         pastas = []
-        infile = open("../data/copy_pastas.txt")
+        infile = open("./data/copy_pastas.txt")
         for aline in infile:
             pasta = aline.strip()
             pastas.append( pasta[:280] )
