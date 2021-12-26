@@ -14,7 +14,7 @@ class Person:
             # Update the newest tweet
             this.newest_status = tmp_tweet
             # Post the response
-            media = this.bot.media_upload("../images/" + media_file)
+            media = this.bot.media_upload("./images/" + media_file)
             this.bot.update_status(status=tweet_txt, in_reply_to_status_id=this.newest_status.id, auto_populate_reply_metadata=True, media_ids=[media.media_id])
 
     # TO DO make it so once people are created, will respond once(the "first" response)
