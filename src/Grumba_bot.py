@@ -10,7 +10,7 @@ class Grumba:
         this.auth = tweepy.OAuthHandler("Z6DJoiHjExjTiBh7eBSu976xd", "WWooaalC3TY1E06o52waBrQI8QQVtDyhp9bW0wNEysMJ8H4ePh")
         this.getAuth()
         # After auth is set make the API 
-        this.api = tweepy.API(this.auth)
+        this.api = tweepy.API(this.auth, retry_count=5, retry_delay=1)
 
         # List of {person} to keep track of all people to reply to
         this.people = this.getPeople()
@@ -64,7 +64,7 @@ class Grumba:
         infile = open("../data/copy_pastas.txt")
         for aline in infile:
             pasta = aline.strip()
-            pastas.append( pasta )
+            pastas.append( pasta[:280] )
 
         infile.close()
         return pastas
