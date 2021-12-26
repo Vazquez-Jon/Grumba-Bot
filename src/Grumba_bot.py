@@ -77,4 +77,9 @@ class Grumba:
             random_media_index = randrange(len(this.media))
             random_pasta_index = randrange(len(this.pastas))
             person.new_post(this.media[random_media_index], this.pastas[random_pasta_index])
+
+        # Remake the users, meme files, and copy pastas to allow for adding new ones without ending bot
+        this.people = this.getPeople()
+        this.media = this.getMedia()
+        this.pastas = this.getPastas()
         
