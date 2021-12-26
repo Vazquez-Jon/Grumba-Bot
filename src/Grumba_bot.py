@@ -11,7 +11,7 @@ class Grumba:
         this.auth = tweepy.OAuthHandler("Z6DJoiHjExjTiBh7eBSu976xd", "WWooaalC3TY1E06o52waBrQI8QQVtDyhp9bW0wNEysMJ8H4ePh")
         this.getAuth()
         # After auth is set make the API 
-        this.api = tweepy.API(this.auth, retry_count=5, retry_delay=1)
+        this.api = tweepy.API(this.auth, retry_count=3, retry_delay=1)
 
         # List of {person} to keep track of all people to reply to
         this.people = this.getPeople()
@@ -76,5 +76,5 @@ class Grumba:
             # Get a random picture and copy pasta
             random_media_index = randrange(len(this.media))
             random_pasta_index = randrange(len(this.pastas))
-            person.post(this.media[random_media_index], this.pastas[random_pasta_index])
+            person.new_post(this.media[random_media_index], this.pastas[random_pasta_index])
         

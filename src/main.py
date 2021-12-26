@@ -30,7 +30,7 @@ def sleep_min(minutes):
 bot = Grumba("GrumbaBot")
 
 while(True):
-        sleep_min(5)
+        sleep_min(3)
         bot.respond()
   
 
